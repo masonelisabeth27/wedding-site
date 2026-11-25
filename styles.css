@@ -116,9 +116,10 @@ h2 + .rule{background:var(--blue-deep)}
 .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.4rem}
 
 /* Venue */
-.venue-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:end;max-width:1150px;margin:2.2rem auto 2.4rem}
-.venue-fig{margin:0}
-.venue-fig img{width:100%;height:auto}
+.venue-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:stretch;max-width:1150px;margin:2.2rem auto 2.4rem}
+.venue-fig{margin:0;display:flex;flex-direction:column}
+/* same-shaped frame for both paintings, so the cards line up */
+.venue-fig img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;object-position:50% 100%;background:#fff}
 .venue-fig figcaption{margin-top:.6rem;font-style:italic;font-size:1.2rem}
 .venue-fig figcaption span{display:block;font-family:var(--body);font-style:normal;font-weight:500;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:.15rem}
 @media (max-width:760px){.venue-pair{grid-template-columns:1fr;gap:2rem}}
