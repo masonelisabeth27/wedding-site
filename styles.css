@@ -222,3 +222,58 @@ footer small{display:block;margin-top:.5rem;font-family:var(--body);font-weight:
   .flora{opacity:.4;max-width:110px}
   .f-venue-euc,.f-reg-euc,.f-todo-sprig{display:none}
 }
+
+/* ================= Dark mode (follows the visitor's device setting) ================= */
+:root{color-scheme:light dark}
+@media (prefers-color-scheme:dark){
+  :root{
+    --d-bg:#121922;      /* page */
+    --d-mist:#18212c;    /* alternate sections */
+    --d-band:#2b3b4f;    /* header, names, schedule, RSVP, footer */
+    --d-card:#1c2632;
+    --d-text:#d9e1ea;
+    --d-soft:#a9bdd4;    /* headings */
+    --d-accent:#8fa6c1;  /* labels, buttons */
+  }
+  body{background:var(--d-bg);color:var(--d-text)}
+
+  /* deep-blue bands instead of the bright dusty blue */
+  header.top,.carousel,.blue,.names,footer{background-color:var(--d-band)}
+  header.top.shadow{box-shadow:0 4px 18px rgba(0,0,0,.45)}
+  .tl-node{background:var(--d-band)}
+  .mist{background-color:var(--d-mist)}
+
+  /* type */
+  h2{color:var(--d-soft)}
+  h2 + .rule{background:var(--d-soft)}
+  .eyebrow,.addr-label,.group-title,.card .maplink,.card .mini,summary::after{color:var(--d-accent)}
+
+  /* buttons */
+  .btn{background:var(--d-accent);border-color:var(--d-accent);color:var(--d-bg)}
+  .btn:hover{background:transparent;color:var(--d-soft);border-color:var(--d-soft)}
+  .blue .btn{color:var(--d-band)}
+
+  /* cards, tabs, FAQ lines */
+  .card{background:var(--d-card);color:var(--d-text);border-color:rgba(169,189,212,.22)}
+  .card::before{border-color:rgba(169,189,212,.12)}
+  .tabs{border-color:var(--d-accent)}
+  .tabs button{color:var(--d-soft)}
+  .tabs button[aria-selected="true"]{background:var(--d-accent);color:var(--d-bg)}
+  .tabs button:focus-visible{outline-color:var(--d-soft)}
+  details{border-bottom-color:rgba(169,189,212,.22)}
+  details:first-child{border-top-color:rgba(169,189,212,.22)}
+
+  /* florals: softer so they don't glow on the dark background */
+  .flora{color:#3e526a}
+  .pat-forget::before,.pat-leaves::before{opacity:.35}
+
+  /* watercolors are painted on white paper: show them as paper cards */
+  .venue-fig{background:#fff;border-radius:10px;padding:1rem 1rem 1.1rem;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+  .venue-fig figcaption{color:#3f5470}
+  .venue-fig figcaption span{color:#6f88a6}
+
+  /* blue line-art locket: lighten it for contrast */
+  .locket{filter:brightness(1.55)}
+
+  .to-top{border-color:rgba(255,255,255,.5);box-shadow:0 4px 14px rgba(0,0,0,.45)}
+}
